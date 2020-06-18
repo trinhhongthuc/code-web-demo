@@ -1,0 +1,220 @@
+ .header {
+
+    &__top {
+        padding: 2.5rem;
+        border-bottom: 1px solid $color-border;
+
+        &-social {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+            &-phone {
+                font-size: 1.6rem;
+                color: $color-text;
+                i {
+                    margin-right: 1rem;
+                    font-size: 1.8rem;
+                    color: $color-primary;
+                }
+            }
+
+            &-phone:hover {
+                text-decoration: none;
+                color: $color-text;
+            }
+
+            &-register {
+                margin-left: 2rem;
+                height: 3.5rem;
+                width: 13rem;
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 0;
+                border: 1px solid $color-border;
+                border-radius: 5rem;
+                position: relative;
+                transition:  0.3s all;
+                text-decoration: none;
+                .header__top-social-wrapper-register {
+                    margin-bottom: 0;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    position: absolute;
+                    top: 50%;
+                    left: 4.5rem;
+                    transform: translateY(-50%);
+                    transition: 0.3s all ;
+                    will-change: transition;
+                    color: $color-text;
+                }
+
+                &-icon {
+                    width: 3.5rem;
+                    height: 3.5rem;;
+                    border: 1px solid $color-border;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    transition: 0.2s all;
+                    margin-left: -1px;
+
+                    i {
+                        color: $color-primary;
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            &-register:hover {
+                background-color: $color-primary;
+                text-decoration: none;
+
+            }
+
+            &-register:hover .header__top-social-register-icon {
+                right: -1px;
+                left: unset;
+                margin-top: -1px;
+               
+            }
+
+            &-register:hover .header__top-social-register-icon i {
+                color: #fff;
+            }
+
+            &-register:hover .header__top-social-wrapper-register {
+                left: 1.8rem;
+                color: #fff;
+            }
+        }
+    }
+
+    &__menu {
+        padding: 3rem;
+        &-nav {
+            &-list {
+                padding: 0;
+                margin: 0;
+                display: flex;
+
+                &-items {
+                    margin: 0 0.8rem ;
+                    list-style: none;
+                    position: relative;
+                    transition: 0.3s all;
+                    will-change: transition;
+
+                    &-link {
+                        text-decoration: none;
+                        font-size: 1.6rem;
+                        color: #000;
+                        padding: 1rem 0.8rem;
+                        text-transform: uppercase;
+                        font-weight: 300;
+                        transition: 0.3s all;
+                        will-change: transition;
+
+                        i {
+                            position: relative;
+                            top: -3px;
+                            right: -3px;
+                            color: rgba(0, 0, 0, 0.7);
+                        }
+                        
+                    }
+
+                    &-link:hover {
+                        color: $color-primary;
+                        text-decoration: none;
+
+                    }
+
+                    .sub-menu {
+                        position: absolute;
+                        top: 255%;
+                        left: 0;
+                        background: rgba(238, 238, 238, 0.301);
+                        display: none;
+                        animation: sub-menu 0.5s linear;
+                        &__list {
+                            list-style: none;
+                            width: 150px;
+                            &-link {
+                                color: $color-text;
+                                padding: 1.2rem 1.4rem;
+                                font-size: 1.6rem;
+                                display: block;
+                                text-transform: uppercase;
+                                font-weight: 400;
+                                transition: 0.5s all;
+                            }
+
+                            &-link:hover {
+                                color: $color-primary;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .sub-menu:before {
+                        content: "";
+                        position: absolute;
+                        top: -28px;
+                        left: 0;
+                        width:100%;
+                        height: 3rem;
+                    }
+
+                
+
+                   
+                }
+
+                &-items:hover .sub-menu {
+                    display: block;
+                }
+
+                .header__menu-nav-list-items:nth-child(1) {
+                    margin-left: 0 !important;
+            
+                }
+
+            }
+        }
+
+        &-icon-list {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style: none;
+            &-item {
+                margin: 0 0.4rem;
+                
+                &-link {
+                    
+                    color: #bbb;
+                    transition: 0.5s all ;
+                    padding: 0.4rem 0.8rem;
+                    will-change: transition;
+                    i {
+                        font-size: 1.6rem;
+                        
+                    }
+                }
+                &-link:hover {
+                    color: $color-primary;
+                }
+            }
+           
+        }
+
+    }
+
+    
+}
