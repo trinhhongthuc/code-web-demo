@@ -3,6 +3,7 @@
 @import "../component/animation";
 @import "../component/button";
 @import "../layout/header";
+@import "../layout/footer";
 
 
 .main {
@@ -386,10 +387,11 @@
    }
 
    .section-img-player {
+       margin-bottom: 8rem;
 
 
         &__background-1 {
-            height: 400px !important;
+            height: 425px !important;
         }
 
         &__background-2, &__background-3  {
@@ -405,18 +407,213 @@
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
+            height: 100%;
             display: block;
+            position: relative;
 
+            &-wrapper {
+                position: absolute;
+                width: 93%;
+                bottom: 20%;
+                left: 7%;
+                z-index: 2;
+                display: none;
+                animation: overlayVsText 0.3s linear;
+
+                &-heading {
+                    font-size: 1.8rem;
+                    color: #fff;
+                    border-bottom: 1px solid $color-primary;
+                    display: block;
+                    padding-bottom: 1.5rem;;
+                }
+
+                &-paragraph {
+                    font-size: 1.4rem;
+                    color: #fff;
+                }
+
+            }
+          
+
+        }
+
+        &__background:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba($color: #000000, $alpha: 0.6);
+            display: none;
+            animation: overlayVsText 0.3s linear;
+        }
+
+        &__background:hover::after {
+            display: block;
+        }
+
+        &__background:hover .section-img-player__background-wrapper {
+            display: block;
         }
 
         .padding-small {
-            padding-left: 6px !important;
-            padding-right: 6px!important;
+            padding-left: 4px !important;
+            padding-right: 4px!important;
         }
 
+        &__background-margin-1 {
+            margin-top: -14.5rem; 
+        }
+
+        &__background-margin-2 {
+            margin-top: -7rem;
+        }
+        &__background-margin-3{
+            margin-top: 0.5rem;
+        }
         
    }
 
+   .section-news {
+       margin-top: 5rem;
+       margin-bottom: 5rem;
+       &__background {
+           background-color: rgba( $color-primary, 0.1);
+           height: 500px;
+           
+           margin-top: 23rem;
+
+          
+
+           &-wrapper {
+               margin-top: -15rem;
+              
+               &-img {
+                   margin-bottom: 2rem;
+                   width: 100%;
+                   height: 100%;
+                   img {
+                       width: 100%;
+                       height: 100%;
+                   }
+               }
+
+               &-days {
+                   margin-bottom: 2rem;
+                   font-size: 1.6rem;
+                   color: #999;
+                   padding-left: 2rem;
+                   position: relative;
+               }
+               &-days::before {
+                   content: '';
+                   position: absolute;
+                   left: 0;
+                   top: 50%;
+                   transform: translateY(-50%);
+                   width: 0.8rem;
+                   height: 0.8rem;
+                   background-color: $color-primary;
+                   border-radius: 2px;
+               }
+
+               &-title {
+                   font-weight: bolder;
+                   font-size: 2rem;
+                   display: block;
+                   color: #000;
+                   padding-bottom: 2rem;
+                   margin-bottom: 3rem;
+                   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                   transition: all 0.5s;
+               }
+
+               &-title:hover {
+                   color: $color-primary;
+                   text-decoration: none;
+               }
+
+               &-comment {
+                   display: flex;
+                   justify-content: space-between;
+
+                   &-general {
+                       font-size: 1.4rem;
+                       color: #999;
+                       
+                       i {
+                           padding-right: 1.2rem;
+                       }
+                   }
+
+                   &-right {
+                       margin-right: 5rem;
+                   }
+               }
+
+           }
+       }
+   }
+
+   .section-view-image {
+
+    &__background {
+        height: 254px;
+        width: 100%;
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%)  scale(0.7);
+            font-size: 3.5rem;
+            color: #fff;
+            display: none;
+           
+
+         
+
+        }
+    }
+
+    &__background::before {
+        content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba( 0, 0, 0, 0.5);
+        display: none;
+        animation: overlayVsText 0.5s linear;
+    }
+
+    &__background:hover::before {
+        display: block;
+    }
+
+    &__background:hover .icon-camera {
+        display: block;
+        transform: translate(-50%,-50%)  scale(1);
+
+
+    }
+
+    .padding-img {
+        padding: 0.4rem !important;
+    }
+    .padding-img:first-child {
+        padding-left: 0 !important;
+    }
+
+    .padding-img:last-child {
+        padding-right: 0 !important;
+    }
+
+   }
 
 
 }
